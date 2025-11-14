@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Wawasan Pak Usop - Logo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            font-family: 'Georgia', serif;
+            padding: 20px;
+        }
+
+        .logo-container {
+            text-align: center;
+            padding: 60px 40px;
+            background: radial-gradient(ellipse at center, #2a2a2a 0%, #0a0a0a 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            max-width: 600px;
+        }
+
+        .initials-container {
+            position: relative;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .initials {
+            font-size: 120px;
+            font-weight: 900;
+            font-family: 'Brush Script MT', cursive, 'Georgia', serif;
+            font-style: italic;
+            letter-spacing: -5px;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .initials .letter {
+            display: inline-block;
+            position: relative;
+            background: linear-gradient(145deg, #ff8c42 0%, #ff6b1a 30%, #ff4500 60%, #d63800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 0 #8b2500) 
+                    drop-shadow(0 4px 0 #6b1d00) 
+                    drop-shadow(0 6px 0 #4b1500)
+                    drop-shadow(0 8px 0 #2b0d00)
+                    drop-shadow(0 12px 20px rgba(0, 0, 0, 0.6));
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        .initials .letter::before {
+            content: attr(data-letter);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 200, 150, 0.3) 40%, transparent 60%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            z-index: 2;
+        }
+
+        @keyframes glow {
+            0% {
+                filter: drop-shadow(0 2px 0 #8b2500) 
+                        drop-shadow(0 4px 0 #6b1d00) 
+                        drop-shadow(0 6px 0 #4b1500)
+                        drop-shadow(0 8px 0 #2b0d00)
+                        drop-shadow(0 12px 20px rgba(255, 69, 0, 0.4));
+            }
+            100% {
+                filter: drop-shadow(0 2px 0 #8b2500) 
+                        drop-shadow(0 4px 0 #6b1d00) 
+                        drop-shadow(0 6px 0 #4b1500)
+                        drop-shadow(0 8px 0 #2b0d00)
+                        drop-shadow(0 12px 30px rgba(255, 69, 0, 0.7));
+            }
+        }
+
+        .leaf-left, .leaf-right {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .leaf-left {
+            left: -60px;
+        }
+
+        .leaf-right {
+            right: -60px;
+            transform: translateY(-50%) scaleX(-1);
+        }
+
+        .leaf {
+            fill: #4CAF50;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+        }
+
+        .leaf-accent {
+            fill: #81C784;
+        }
+
+        .restaurant-name {
+            margin-top: 20px;
+        }
+
+        .name-line {
+            display: block;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 8px 0;
+            position: relative;
+        }
+
+        .name-line.primary {
+            font-size: 32px;
+            color: #ffffff;
+            text-shadow: 0 2px 0 #666,
+                         0 4px 0 #444,
+                         0 6px 0 #222,
+                         0 8px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .name-line.secondary {
+            font-size: 28px;
+            color: #ffb366;
+            text-shadow: 0 2px 0 #8b4513,
+                         0 4px 0 #6b3410,
+                         0 6px 12px rgba(0, 0, 0, 0.7);
+            letter-spacing: 12px;
+        }
+
+        .divider {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #ff8c42 50%, transparent 100%);
+            margin: 15px auto;
+            box-shadow: 0 0 10px rgba(255, 140, 66, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .initials {
+                font-size: 80px;
+            }
+            
+            .name-line.primary {
+                font-size: 24px;
+                letter-spacing: 4px;
+            }
+            
+            .name-line.secondary {
+                font-size: 20px;
+                letter-spacing: 6px;
+            }
+            
+            .leaf-left {
+                left: -50px;
+            }
+            
+            .leaf-right {
+                right: -50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .initials {
+                font-size: 60px;
+            }
+            
+            .leaf-left, .leaf-right {
+                display: none;
+            }
+            
+            .name-line.primary {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            
+            .name-line.secondary {
+                font-size: 16px;
+                letter-spacing: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="initials-container">
+            <!-- Left Leaf -->
+            <svg class="leaf-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path class="leaf" d="M50,10 Q80,30 85,60 Q85,80 70,90 Q50,95 40,85 Q30,75 35,55 Q40,35 50,10 Z"/>
+                <path class="leaf-accent" d="M50,10 Q65,25 68,45 Q68,60 60,70 Q50,75 45,68 Q40,60 43,48 Q46,30 50,10 Z" opacity="0.6"/>
+                <line x1="50" y1="10" x2="50" y2="90" stroke="#2E7D32" stroke-width="2" opacity="0.8"/>
+            </svg>
+
+            <!-- Initials -->
+            <div class="initials">
+                <span class="letter" data-letter="R">R</span><span class="letter" data-letter="W">W</span><span class="letter" data-letter="P">P</span>
+            </div>
+
+            <!-- Right Leaf -->
+            <svg class="leaf-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path class="leaf" d="M50,10 Q80,30 85,60 Q85,80 70,90 Q50,95 40,85 Q30,75 35,55 Q40,35 50,10 Z"/>
+                <path class="leaf-accent" d="M50,10 Q65,25 68,45 Q68,60 60,70 Q50,75 45,68 Q40,60 43,48 Q46,30 50,10 Z" opacity="0.6"/>
+                <line x1="50" y1="10" x2="50" y2="90" stroke="#2E7D32" stroke-width="2" opacity="0.8"/>
+            </svg>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="restaurant-name">
+            <span class="name-line primary">RESTORAN WAWASAN</span>
+            <span class="name-line secondary">PAK USOP</span>
+        </div>
+    </div>
+</body>
+</html>
